@@ -3,7 +3,7 @@ const Header = () => {
         <header>
             <div className="wrapper">
                 <h1> Anime Watch List</h1>
-                <p className="intro">Need more info on your favourite anime? You've come to the right place. Enter the anime below to find more info!</p>
+                <p className="intro">Trying to get into anime and don't know where to start? Look up some anime below to get quick summaries and find your next bingeworthy anime. </p>
 
             </div>
         </header>
