@@ -1,23 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import AnotherSearch from'./AnotherSearch.js';
+import Header from './Header.js';
+import Footer from './Footer.js';
+import axios from 'axios';
+import { useState, useEffect} from 'react';
 
 function App() {
+
+//get anime from jikan API
+//save anime to the state
+//display data onto the page
+  //pass results through components as props
+
+  // const [anime, setAnime] = useState([]);
+
+  // console.log (useState([]))
+
+  // useEffect(() => {
+  //   axios({
+  //     method: "GET",
+  //     url: "https://api.jikan.moe/v3/search/anime?",
+  //     dataResponse: "JSON",
+  //     params: {
+  //       q: 'naruto',
+  //       order_by: 'title',
+  //       sort: 'dsc',
+  //       format: "JSON",
+  //     },
+  //   }).then((res) => {
+
+  //     console.log(res)
+  //     const animeResults = res.data.results
+      
+  //     setAnime(animeResults)
+  //   })
+  // }, [])
+
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <AnotherSearch />
+      </main>
+      <Footer />
     </div>
   );
 }

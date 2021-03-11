@@ -1,38 +1,160 @@
-.App {
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+
+/* font-family: 'Bebas Neue', cursive;
+font-family: 'Montserrat', sans-serif; */
+	
+.wrapper {
+  width:90%;
+  margin: 0 auto;
+  max-width:1200px;
+}
+/* 
+* {
+  border: 1px solid red;
+} */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* HEADER STYLING */
+
+
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: rgb(251, 251, 251);
+  text-shadow: 4px 3px 5px rgb(2, 56, 27);
+  margin-top: 30px;
+  
+}
+
+header p {
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 4px 3px 5px rgb(2, 56, 27);
+}
+
+nav {
+  text-align: right;
+  
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+ 
+}
+
+nav li {
+  list-style: none;
+  margin: 0 30px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.intro {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* FORM STYLING */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form  {
   display: flex;
   flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  background-color: rgba(121, 124, 124, 0.616);
+  border: 2px solid rgba(235, 160, 212, 0.966);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  border-radius: 20px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.25rem;
+  letter-spacing: 2.5px;
+  background: lightblue;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid white;
+  box-shadow: 4px 5px 3px black;
+}
+/* RESULTS CONTAINER */
+
+.result-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 10px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  background-color:#244c7c;
+
+}
+
+
+.result {
+  display: flex;
+  align-items: center;
+  background-color: rgba(115, 176, 179, 0.383);
+  background-image:url(./assets/anime-sky.jpg);
+  background-blend-mode: soft-light;
+  border: 3px solid rgba(235, 160, 212, 0.966);
+  padding: 20px;
+  box-shadow: 5px 10px 5px #2f2f2f;
+}
+
+
+.result h2 {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.anime-synopsis {
+  line-height: 1.5;
+}
+
+.result-text {
+  text-align: left;
+  margin: 0 20px;
+}
+
+img {
+  box-shadow: 5px 10px 5px #2f2f2f;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: lightblue;
+  text-align: center;
+  padding: 10px;
+  
+}
+
+footer p {
+  margin: 0;
 }
