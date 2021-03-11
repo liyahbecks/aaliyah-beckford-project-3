@@ -1,40 +1,44 @@
 import './App.css';
-import AnotherSearch from'./AnotherSearch.js';
+import Search from'./Search.js';
 import Header from './Header.js';
+import TopAnime from './TopAnime.js';
 import Footer from './Footer.js';
 import axios from 'axios';
 import { useState, useEffect} from 'react';
 
 function App() {
 
-//get anime from jikan API
-//save anime to the state
-//display data onto the page
-  //pass results through components as props
+  const [anime, setAnime] = useState([]);
 
-  // const [anime, setAnime] = useState([]);
 
-  // console.log (useState([]))
+  useEffect(() => {
+    axios({
+      method: "GET",
+      url: "https://api.jikan.moe/v3/top/anime",
+      dataResponse: "JSON",
+      params: {
+        page: 1,
+        subtype: "tv",
+        format: "JSON",
+      }
+  
+    }).then((res) => {
 
-  // useEffect(() => {
-  //   axios({
-  //     method: "GET",
-  //     url: "https://api.jikan.moe/v3/search/anime?",
-  //     dataResponse: "JSON",
-  //     params: {
-  //       q: 'naruto',
-  //       order_by: 'title',
-  //       sort: 'dsc',
-  //       format: "JSON",
-  //     },
-  //   }).then((res) => {
+      const topAnime = res.data.top
 
-  //     console.log(res)
-  //     const animeResults = res.data.results
+      const topAnimeResults = []
+
+      topAnime.map( (results) => {
+        return topAnimeResults.push({
+          animeName: results.title,
+          animeImage: results.image_url,
+
+        })
+      })
+      setAnime(topAnimeResults)
       
-  //     setAnime(animeResults)
-  //   })
-  // }, [])
+    })
+  }, [])
 
  
 
@@ -42,7 +46,8 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <AnotherSearch />
+        <Search />
+        <TopAnime anime={anime}/>
       </main>
       <Footer />
     </div>
